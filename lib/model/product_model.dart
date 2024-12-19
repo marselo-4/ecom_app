@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:ecom_app/sqflite/bbdd.dart';
-import 'package:sqflite/sqflite.dart'; // Importa DatabaseService
+import 'package:sqflite/sqflite.dart';
 
 class Product {
   final int id;
@@ -17,7 +17,6 @@ class Product {
     required this.imageUrl,
   });
 
-  // Método para convertir Product a Map
   Map<String, dynamic> toMap() {
     return {
       'id': id,

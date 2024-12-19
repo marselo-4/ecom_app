@@ -21,7 +21,7 @@ class _CatalogPageState extends State<CatalogPage> {
     super.initState();
     saveProductsToDatabase();
     getProductsFromDatabase();
-    filteredProducts = products; // Initially show all products
+    filteredProducts = products;
   }
 
   void filterProducts(String category) {
@@ -44,7 +44,7 @@ class _CatalogPageState extends State<CatalogPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('${product.name} añadido al carrito'),
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
       ),
     );
   }
@@ -74,7 +74,7 @@ class _CatalogPageState extends State<CatalogPage> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -114,10 +114,9 @@ class _CatalogPageState extends State<CatalogPage> {
                     color: selectedCategory == 'Home Appliances' ? Colors.black : Colors.white,
                   ),
                 ),
-                // Add more ChoiceChips for other categories as needed
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
                 itemCount: filteredProducts.length,
